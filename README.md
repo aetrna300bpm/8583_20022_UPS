@@ -31,6 +31,7 @@ flowchart LR
         F -->|Converting| H[ISO 8583]
         G -->|Converting| I[ISO 20022]
     end
+```
 
 
 ## 2. The Envelope Wrapper Pattern (3 parts structure)
@@ -64,7 +65,45 @@ This tier holds the raw message exactly as it arrived (e.g., the original `ISOMs
     * **Audit Logging:** Ensures the switch has a pristine record of the partner's exact intent for dispute resolution.
 
 ---
+## 4. Configuration Directory Structure
 
+To maintain the separation of concerns, the ISF schemas, translation dialects, and routing rules are strictly segregated in the file system. This ensures backward compatibility via versioning and prevents configuration overlap.
+
+```
+/config
+├── data/
+│   ├── ISF/
+│   │   ├── legacy_versions/
+│   │   │   └── ver_01/
+│   │   │       ├── ISF_config.txt
+│   │   │       ├── common_data/
+│   │   │       └── internal_data/
+│   │   └── live_version/
+│   │       ├── ISF_config.txt
+│   │       ├── common_data/
+│   │       └── internal_data/
+│   └── translation/
+│       ├── ISF_20022/
+│       │   ├── ISF_20022_map_default.txt
+│       │   └── custom_dialects/
+│       │       ├── ISF_20022_map_dialect_1.txt
+│       │       └── ISF_20022_map_dialect_2.txt
+│       └── ISF_8583/
+│           ├── ISF_8583_map_default.txt
+│           └── custom_dialects/
+│               ├── ISF_8583_map_dialect_1.txt
+│               └── ISF_8583_map_dialect_2.txt
+└── partner/
+    ├── routing.txt
+    └── configuration/
+        ├── 20022_egress/
+        │   ├── bankA.txt
+        │   └── bankB.txt
+        └── 8583_egress/
+            ├── bank1.txt
+            └── bank2.txt
+```
+---
 ## 3. Disclaimer
 1.  As this was developed by an IT guy, the proposed model only serves as a philosophy and a toolkit, while concrete and specific implementation should be left to the BA team to develop.
 2. This thing was developed for use in a financial switch, specifically in the ACH department. But its usage, as a tool for translation of ISO 8583 and ISO 20022 for interoperability between different financial message formats can be applied for commercial banks too.
