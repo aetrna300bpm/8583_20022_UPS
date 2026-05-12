@@ -1,5 +1,8 @@
 # 8583_20022_UPS
 A system using a custom intermediate data format allowing for interchangeability of both financial message standards.
+
+
+```mermaid
 flowchart LR
     subgraph Ingress Layer
         A[ISO 8583 TCP/IP] -->|Raw Bytes| C(Legacy Translator)
