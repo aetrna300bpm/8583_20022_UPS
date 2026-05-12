@@ -104,7 +104,7 @@ To maintain the separation of concerns, the ISF schemas, translation dialects, a
             └── bank2.txt
 ```
 ---
-## 3. Disclaimer
+## 5. Disclaimer
 1.  As this was developed by an IT guy, the proposed model only serves as a philosophy and a toolkit, while concrete and specific implementation should be left to the BA team to develop.
 2. This thing was developed for use in a financial switch, specifically in the ACH department. But its usage, as a tool for translation of ISO 8583 and ISO 20022 for interoperability between different financial message formats can be applied for commercial banks too.
 3. The thing is originally made to be used with JPOS and by extension Java, but the ideas are agnostic to technology: one can implement this in whatever one is used to.
