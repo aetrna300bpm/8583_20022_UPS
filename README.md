@@ -105,7 +105,7 @@ To maintain the separation of concerns, the ISF schemas, translation dialects, a
 ```
 ---
 ## 5. Disclaimer
-1.  As this was developed by an IT guy, the proposed model only serves as a philosophy and a toolkit, while concrete and specific implementation should be left to the BA team to develop.
-2. This thing was developed for use in a financial switch, specifically in the ACH department. But its usage, as a tool for translation of ISO 8583 and ISO 20022 for interoperability between different financial message formats can be applied for commercial banks too.
-3. The thing is originally made to be used with JPOS and by extension Java, but the ideas are agnostic to technology: one can implement this in whatever one is used to.
-4. Loss of data between conversions is inevitable. There will be fields existing in one standard but not in another. This will be handled by passing in default values, but the more important information is preserved (by the engineering of part 2).
+1. As this was developed by an IT guy, the proposed model only serves as a philosophy and a toolkit, while concrete and specific implementation (explicit mappings/dialects) should be left to the BA team to develop.
+2. This architecture was developed for use in a financial switch, specifically in the ACH department. However, its usage as a tool for translation between ISO 8583 and ISO 20022 can be applied to commercial banks aiming for interoperability.
+3. The original PoC is tailored for use with JPOS and Java, but the concepts are completely technology-agnostic: one can implement this Hub-and-Spoke design in whatever stack is most suitable.
+4. Loss of data between conversions is inevitable. There will be fields existing in one standard but not in another. This can be handled by passing in default values, but the more important information is preserved (by the engineering of part 2).
