@@ -65,7 +65,7 @@ This tier holds the raw message exactly as it arrived (e.g., the original `ISOMs
     * **Audit Logging:** Ensures the switch has a pristine record of the partner's exact intent for dispute resolution.
 
 ---
-## 4. Configuration Directory Structure
+## 3. Configuration Directory Structure
 
 To maintain the separation of concerns, the ISF schemas, translation dialects, and routing rules are strictly segregated in the file system. This ensures backward compatibility via versioning and prevents configuration overlap.
 
@@ -104,7 +104,7 @@ To maintain the separation of concerns, the ISF schemas, translation dialects, a
             └── bank2.txt
 ```
 ---
-## 5. Disclaimer
+## 4. Disclaimer
 1. As this was developed by an IT guy, the proposed model only serves as a philosophy and a toolkit, while concrete and specific implementation (explicit mappings/dialects) should be left to the BA team to develop.
 2. This architecture was developed for use in a financial switch, specifically in the ACH department. However, its usage as a tool for translation between ISO 8583 and ISO 20022 can be applied to commercial banks aiming for interoperability.
 3. The original PoC is tailored for use with JPOS and Java, but the concepts are completely technology-agnostic: one can implement this Hub-and-Spoke design in whatever stack is most suitable.
