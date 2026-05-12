@@ -8,7 +8,7 @@ The core philosophy behind the ISF (Internal Standard Format) is **infinite exte
 * **Hub-and-Spoke Integration:** By forcing all external dialects to normalize into the ISF at the system boundaries (Ingress), the core switch operates entirely independent of external formats. This solves the N x N point-to-point translation nightmare.
 * **Agnosticism to Evolution:** If a new global standard supersedes ISO 20022, or a proprietary e-wallet API is onboarded, the core switch code remains untouched. Only a new ingress/egress mapping dialect is required.
 
----
+
 **Overall Architecture Overview**
 
 The system utilizes a decoupled Hub-and-Spoke architecture. All incoming messages are immediately translated into the ISF envelope, routed through the core system agnostically, and then translated back out to the destination's required format.
@@ -33,7 +33,7 @@ flowchart LR
     end
 ```
 
-
+---
 ## 2. The Envelope Wrapper Pattern (3 parts structure)
 To balance the highest level of abstraction with the absolute specificity required by financial systems, the ISF is divided into three distinct tiers. This is known as the Envelope Wrapper Pattern.
 
